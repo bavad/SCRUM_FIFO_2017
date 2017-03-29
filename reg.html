@@ -1,0 +1,117 @@
+<html lang="ru">
+  <head>
+      <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+<!--
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+-->
+<!--
+     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
+      <script type="text/javascript" src="autoresize.jquery.min.js"></script>   
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        function auto_grow(element) {
+            element.style.height = "5px";
+            element.style.height = (element.scrollHeight)+"px";
+        } 
+    </script>
+-->
+
+  
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" />
+
+<style>
+.form-width {max-width: 25rem;}
+.has-float-label {
+ position: relative; }
+ .has-float-label label {
+ position: absolute;
+ left: 0;
+ top: 0;
+ cursor: text;
+ font-size: 75%;
+ opacity: 1;
+ -webkit-transition: all .2s;
+ transition: all .2s;
+ top: -.5em;
+ left: 0.75rem;
+ z-index: 3;
+ line-height: 1;
+ padding: 0 1px; }
+ .has-float-label label::after {
+ content: " ";
+ display: block;
+ position: absolute;
+ background: white;
+ height: 2px;
+ top: 50%;
+ left: -.2em;
+ right: -.2em;
+ z-index: -1; }
+ .has-float-label .form-control::-webkit-input-placeholder {
+ opacity: 1;
+ -webkit-transition: all .2s;
+ transition: all .2s; }
+ .has-float-label .form-control:placeholder-shown:not(:focus)::-webkit-input-placeholder {
+ opacity: 0; }
+ .has-float-label .form-control:placeholder-shown:not(:focus) + label {
+ font-size: 150%;
+ opacity: .5;
+ top: .3em; }
+
+.input-group .has-float-label {
+ display: table-cell; }
+ .input-group .has-float-label .form-control {
+ border-radius: 0.25rem; }
+ .input-group .has-float-label:not(:last-child) .form-control {
+ border-bottom-right-radius: 0;
+ border-top-right-radius: 0; }
+ .input-group .has-float-label:not(:first-child) .form-control {
+ border-bottom-left-radius: 0;
+ border-top-left-radius: 0;
+ margin-left: -1px; }
+</style>
+      </head>
+    
+    
+<body style="background-color:lightgrey">
+   <a hred=""><button style="width:100%;height:45px;background-color: black; border-color: black; font-weight:700;"><p align="left" style="color:white; font-size: 170%;">FIFO</p></button></a> 
+<div class="p-x-1 p-y-3">
+ <form class="card card-block m-x-auto bg-faded form-width">
+ <legend class="m-b-1 text-xs-center">Регистрация</legend>
+ <div class="form-group input-group">
+ <span class="has-float-label">
+ <input class="form-control" id="first" type="text" placeholder="Логин"/>
+ <label for="first">Логин</label>
+ </span>
+ 
+ </div>
+ <div class="form-group input-group">
+ <span class="input-group-addon">@</span>
+ <span class="has-float-label">
+ <input class="form-control" id="email" type="email" placeholder="name@example.com"/>
+ <label for="email">E-mail</label>
+ </span>
+ </div>
+ <div class="form-group has-float-label">
+ <input class="form-control" id="password" type="password" placeholder="••••••••"/>
+ <label for="password">Пароль</label>
+ </div>
+ <div class="form-group has-float-label">
+ <input class="form-control" id="password1" type="password" placeholder="••••••••"/>
+ <label for="password1">Пароль повторно</label>
+ </div>
+ 
+ 
+ <div class="text-xs-center">
+ <button class="btn btn-block btn-primary" style="background-color:green" type="submit">Регистрация</button>
+ </div>
+ </form>
+</div> 
+    </body>
+</head>

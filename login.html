@@ -1,0 +1,87 @@
+﻿<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" />
+<head>
+		<title>Авторизация</title>
+        <meta charset='utf-8' />
+	</head>
+<style>
+.form-width {max-width: 25rem;}
+.has-float-label {
+ position: relative; }
+ .has-float-label label {
+ position: absolute;
+ left: 0;
+ top: 0;
+ cursor: text;
+ font-size: 75%;
+ opacity: 1;
+ -webkit-transition: all .2s;
+ transition: all .2s;
+ top: -.5em;
+ left: 0.75rem;
+ z-index: 3;
+ line-height: 1;
+ padding: 0 1px; }
+ .has-float-label label::after {
+ content: " ";
+ display: block;
+ position: absolute;
+ background: white;
+ height: 2px;
+ top: 50%;
+ left: -.2em;
+ right: -.2em;
+ z-index: -1; }
+ .has-float-label .form-control::-webkit-input-placeholder {
+ opacity: 1;
+ -webkit-transition: all .2s;
+ transition: all .2s; }
+ .has-float-label .form-control:placeholder-shown:not(:focus)::-webkit-input-placeholder {
+ opacity: 0; }
+ .has-float-label .form-control:placeholder-shown:not(:focus) + label {
+ font-size: 150%;
+ opacity: .5;
+ top: .3em; }
+
+.input-group .has-float-label {
+ display: table-cell; }
+ .input-group .has-float-label .form-control {
+ border-radius: 0.25rem; }
+ .input-group .has-float-label:not(:last-child) .form-control {
+ border-bottom-right-radius: 0;
+ border-top-right-radius: 0; }
+ .input-group .has-float-label:not(:first-child) .form-control {
+ border-bottom-left-radius: 0;
+ border-top-left-radius: 0;
+ margin-left: -1px; }
+</style>
+<!--КНОПКА(лучше заменить не на кнопку) перехода на главную страницу(или куда-то еще)!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+<body style="background-color: lightgrey;">
+<a hred=""><button  style="width:100%;height:45px;background-color: black; border-color: black; font-weight:700;"><p align="left" style="color:white; font-size: 170%;">FIFO</p></button></a>
+<div color = "black"> </div>
+<div class="p-x-1 p-y-3" >
+ <form class="card card-block m-x-auto bg-faded form-width" >
+ <legend class="m-b-1 text-xs-center" style="width:100%;">Начните пользоваться прямо сейчас</legend>
+ <div class="form-group input-group">
+ <span class="has-float-label">
+ <input class="form-control" id="first" type="text" placeholder="Логин"/>
+ <label for="first">Логин</label>
+ </span>
+ 
+ </div>
+ 
+ <div class="form-group has-float-label">
+ <input class="form-control" id="password" type="password" placeholder="••••••••"/>
+ <label for="password">Пароль</label>
+ </div>
+ 
+ 
+ 
+ <div class="text-xs-center">
+     <!--КНОПКА обраьатывающая данные!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+     <button class="btn btn-block btn-primary" type="submit" style="background-color: forestgreen; border-color: forestgreen">Войти</button></br>
+     <!--КНОПКА перекидующая на страницу регистрации!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+     <a href=""><button class="btn btn-block btn-primary" >Зарегистрироваться</button></a>
+ </div>
+ </form>
+</div> 
+</body>
