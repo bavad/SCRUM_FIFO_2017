@@ -1,0 +1,69 @@
+﻿@model FIFO.Models.RegistrationModel
+
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section styles{
+    @Styles.Render("~/Content/LoginRegisterStyle/css")
+}
+
+@section header_icon{
+    <div class="navbar-collapse collapse navbar-right">
+        <ul class="nav navbar-nav">
+            <li>@Html.ActionLink("Войти", "Login", "Account")</li>
+            <li>@Html.ActionLink("Зарегистрироваться", "Register", "Account")</li>
+        </ul>
+    </div>
+}
+
+
+
+
+@using (Html.BeginForm("Register", "Account", FormMethod.Post, new
+{
+    @class = "form-horizontal"
+}))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        <h3>Начните пользоваться прямо сейчас</h3>
+    </div>
+    <div class="form-group">
+        <div class="form-group">
+            <div class="col-sm-10">
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "E-mail" })
+                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "red-text" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-10">
+                @Html.TextBoxFor(m => m.Login, new { @class = "form-control", placeholder = "Логин" })
+                @Html.ValidationMessageFor(m => m.Login, "", new { @class = "red-text" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-10">
+                @Html.TextBoxFor(m => m.Password, new { @class = "form-control", placeholder = "Пароль", type = "password" })
+                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "red-text" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-10">
+                @Html.TextBoxFor(m => m.PasswordConfirm, new { @class = "form-control", placeholder = "Подтвердите пароль", type = "password" })
+                @Html.ValidationMessageFor(m => m.PasswordConfirm, "", new { @class = "red-text" })
+            </div>
+        </div>
+        <div class="col-sm-10">
+            @Html.ValidationSummary(true, "", new { @class = "red-text" })
+            <hr />
+        </div>
+        <div class="form-group">
+            <div class="col-sm-10">
+                <button type="submit" class="btn btn-success btn-block">Зарегистрироваться</button>
+            </div>
+        </div>
+    </div>
+}

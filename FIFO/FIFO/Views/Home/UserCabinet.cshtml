@@ -1,0 +1,16 @@
+﻿@model FIFO.Models.User
+
+@{
+    ViewBag.Title = "UserCabinet";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section header_icon{
+    <div class="navbar-collapse collapse navbar-right">
+        <ul class="nav navbar-nav">
+            <li>@Html.ActionLink("Выйти", "Logout", "Account");</li>
+        </ul>
+    </div>
+}
+
+<h2>Ура, вы вошли! Зачем только, не понятно....</h2>
