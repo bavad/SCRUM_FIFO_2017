@@ -82,17 +82,22 @@ namespace FIFO.Controllers
             {
                 using (FIFODBContext db = new FIFODBContext())
                 {
-                    User user = await db.Users.FirstOrDefaultAsync(u => u.Email == model.Email);
+                    User userEmail = await db.Users.FirstOrDefaultAsync(u => u.Email == model.Email);
+                    User userLogin = await db.Users.FirstOrDefaultAsync(u => u.Login == model.Login);
 
-                    if (user != null)
+                    if (userEmail != null)
                     {
                         ModelState.AddModelError("", "Пользователь с таким имейлом уже существует");
+                    }
+                    else if (userLogin != null)
+                    {
+                        ModelState.AddModelError("", "Пользователь с таким логином уже существует");
                     }
                     else
                     {
                         db.Users.Add(new User { Email = model.Email, Login = model.Login, Password = model.Password });
                         db.SaveChanges();
-                        user = await db.Users.FirstOrDefaultAsync(u => u.Email == model.Email);
+                        User user = await db.Users.FirstOrDefaultAsync(u => u.Email == model.Email);
                         singInUser(user);
 
                         return RedirectToAction("UserCabinet", "Home");

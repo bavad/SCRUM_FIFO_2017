@@ -17,15 +17,17 @@ namespace FIFO.Models
         [Required(ErrorMessage = "Логин не может быть пустым")]
         [MinLength(3, ErrorMessage = "Логин слишком короткий")]
         [MaxLength(30, ErrorMessage = "Логин не может содержать больше 30 символов")]
+        [RegularExpression(@"(?i)\b[A-Z0-9._%-]+\b", ErrorMessage = "Логин содержит некорректные символы")]
         public string Login { get; set; }
 
         [Required(ErrorMessage = "Пароль не может быть пустым")]
         [DataType(DataType.Password)]
         [MinLength(4, ErrorMessage = "Пароль слишком короткий")]
         [MaxLength(30, ErrorMessage = "Пароль не может содержать больше 30 символов")]
+        [RegularExpression(@"(?i)\b[A-Z0-9._%-]+\b", ErrorMessage = "Пароль содержит некорректные символы")]
         public string Password { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Подтвердите пароль")]
         [Compare("Password", ErrorMessage = "Пароли не совпадают")]
         [DataType(DataType.Password)]
         public string PasswordConfirm { get; set; }
